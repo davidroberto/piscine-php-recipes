@@ -6,6 +6,10 @@
   // grâce à la variable $_GET de PHP.
   // cette variable est fournie par PHP et nous permet de récupérer des infos dans l'url
 
+  // $_GET est une variable super globales permettant de récupérer un parametre dans l'url.
+  // le parametre dans l'url doit avoir une clé et une valeur et être précédé de "?" pour pouvoir être récupéré.
+
+  // les parametres d'url sont une façon d'envoyer des données d'une page PHP à une autre
   $index = $_GET["index"];
   
 ?>
