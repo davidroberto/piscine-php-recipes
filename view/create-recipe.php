@@ -8,17 +8,24 @@
 
 <?php
 
-	if (isset($_POST["title"]) &&
-		isset($_POST["description"]) &&
-		isset($_POST["image"]) &&
-		strlen($_POST["title"]) > 3 &&
-		strlen($_POST["description"]) > 10 &&
-		strlen($_POST["image"]) > 5
-	) {
-		$message = "Recette créée";
-	} else {
-		$message = "Veuillez créer une recette en renseignant tous les champs";
+	$message = null;
+
+	if ($_SERVER["REQUEST_METHOD"] === "POST") {
+
+		if (isset($_POST["title"]) &&
+			isset($_POST["description"]) &&
+			isset($_POST["image"]) &&
+			strlen($_POST["title"]) > 3 &&
+			strlen($_POST["description"]) > 10 &&
+			strlen($_POST["image"]) > 5
+		) {
+			$message = "Recette créée";
+		} else {
+			$message = "Tous les champs ne sont pas renseignés !";
+		}
+
 	}
+
 
 ?>
 
