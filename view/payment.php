@@ -15,7 +15,7 @@
 <!-- je créé un formulaire avec en action le fichier payment-confirmation.php 
  (donc au submit l'utilisateur sera envoyé sur cette page) 
  et en method post : donc les données du formulaire ne seront pas envoyées dans l'url
- comme avec le get, mais elles seront envoyées masquées
+ comme avec le get, mais elles seront envoyées
  -->
 <form method="post" action="payment-confirmation.php">
 
