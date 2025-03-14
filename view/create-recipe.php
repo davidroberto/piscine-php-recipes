@@ -1,6 +1,6 @@
 <?php
   require_once('../config.php');
-  require_once('../recipes-repository.php');
+  require_once('../model/recipes-repository.php');
 ?>
 
 <?php
