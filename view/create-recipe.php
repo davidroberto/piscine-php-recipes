@@ -21,16 +21,7 @@
 			strlen($_POST["image"]) > 5
 		) {
 
-			$newRecipe = [
-				"title" => $_POST["title"],
-				"description" => $_POST["description"],
-				"publishedDate" => new DateTime(),
-				"isPublished" => true,
-				"image" => $_POST["image"]
-			];
-
-			array_push($recipes, $newRecipe);
-
+			createRecipe($_POST["title"], $_POST["description"], $_POST["image"]);
 
 			$message = "Recette créée";
 		} else {
@@ -38,7 +29,6 @@
 		}
 
 	}
-
 
 ?>
 

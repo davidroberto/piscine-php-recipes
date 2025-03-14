@@ -35,5 +35,22 @@ $recipes = [
         "publishedDate" => new DateTime("2024-02-28"),
         "isPublished" => false,
         "image" => "https://thecookiedoughdiaries.com/wp-content/uploads/2024/06/HERO-triple-chocolate-brownies-5-FEATURED.jpg"
-    ]
+    ],
 ];
+
+
+function createRecipe($title, $description, $image) {
+    $newRecipe = [
+        "title" => $title,
+        "description" => $description,
+        "publishedDate" => new DateTime(),
+        "isPublished" => true,
+        "image" => $image
+    ];
+
+    // permet de pouvoir accéder au tableau de recette
+    // à l'intérieur de la fonction 
+    global $recipes;
+
+    array_push( $recipes, $newRecipe);
+}
