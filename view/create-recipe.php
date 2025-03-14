@@ -1,5 +1,6 @@
 <?php
   require_once('../config.php');
+  require_once('../recipes-repository.php');
 ?>
 
 <?php
@@ -19,6 +20,18 @@
 			strlen($_POST["description"]) > 10 &&
 			strlen($_POST["image"]) > 5
 		) {
+
+			$newRecipe = [
+				"title" => $_POST["title"],
+				"description" => $_POST["description"],
+				"publishedDate" => new DateTime(),
+				"isPublished" => true,
+				"image" => $_POST["image"]
+			];
+
+			array_push($recipes, $newRecipe);
+
+
 			$message = "Recette créée";
 		} else {
 			$message = "Tous les champs ne sont pas renseignés !";
@@ -64,6 +77,13 @@
 
 </form>
 
+
+<h2>Les recettes créées :</h2>
+	<?php foreach($recipes as $index => $recipe) { ?>
+		<article class="recipe">
+			<h2 class="recipe-title"><?php echo $recipe["title"]; ?></h2>
+		</article>
+	<?php } ?>
 </main>
 
 </body>
